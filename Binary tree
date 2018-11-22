@@ -59,3 +59,34 @@ void PrintBTree(BTree *root,int level)
 			print(" ");
 		printf("-------%c\n",root->data);
 		PrintBTree(root->lchild,level+1);
+	}
+}
+int depth(BTree *T)
+{
+	int depthval,depthL,depthR;
+	if(!T)
+		depthval=0;
+	else
+	{
+		depthL=depth(T->lchild);
+		depthR=depth(T->rchlid);
+		depthval=(depthL>depthR?depthL:depthR)+1;
+	}
+	returndepthval;
+}
+int count(BTree *T)
+{
+	int h,hl,hr;
+	if (!T)
+		return 0;
+	else if(!T->lchild&&!T->rchlid)
+		return 1;
+	else
+	{
+		hl=count(T->lchild);
+		hr=count(T->rchlid);
+		h=hl+hr;
+	}
+	return h;
+}
+
