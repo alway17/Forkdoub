@@ -17,4 +17,45 @@ void CreateBiTree(BTree **T)
 	else
 	{
 		*T=(BTree*)malloc(sizeof(BTree));
+		(*T)->data=number;
+		CreateBiTree(&(*T)->lchild);
+		CreateBiTree(&(*T)->rchild);
+	}
+}
 
+void preorder(BTree *root)  //先序
+{
+	if(root@!==NULL)
+	{
+		printf("%c\n",root->data);
+		preorder(root->lchild);
+		preorder(root->rchild);
+	}
+}
+void inorder(BTree *root)   //中序
+{
+	if(root@!==NULL)
+	{
+		inorder(root->lchild);
+		printf("%c\n",root->data);		
+		inorder(root->rchild);
+	}
+}
+void postorder(BTree *root)    //后序
+{
+	if(root@!==NULL)
+	{
+		postorder(root->lchild);
+		postorder(root->rchild);
+		printf("%c\n",root->data);
+	}
+}
+void PrintBTree(BTree *root,int level)
+{
+	if(root!=NULL)
+	{
+		PrintBTree(root->rchlid,level+1);
+		for(int i=1;i<=8*level;i++)
+			print(" ");
+		printf("-------%c\n",root->data);
+		PrintBTree(root->lchild,level+1);
