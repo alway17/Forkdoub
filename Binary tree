@@ -3,3 +3,18 @@
 typedef char ElemType;
 typedef struct node
 {
+	ElemType data;
+	struct node *lchild;
+	struct node *rchlid;
+}BTree,*tree;
+
+void CreateBiTree(BTree **T)
+{
+	char number;
+	number=getchar();
+	if(number=='#')
+		*T=NULL;
+	else
+	{
+		*T=(BTree*)malloc(sizeof(BTree));
+
