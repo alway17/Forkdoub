@@ -1,4 +1,5 @@
 ## doub.io的记录  方便出门在外安装
+----代理----
 
 安装单用户ssr     bash ssr.sh
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
@@ -7,5 +8,10 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/dou
 Mtproxy Tele代理     ./mtproxy.sh
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/mtproxy.sh && chmod +x mtproxy.sh && bash mtproxy.sh
 
+
+-----辅助-----
 魔改bbr加速     ./tcp.sh
 wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+
+SuperBench.sh 一键测试服务器的基本参数
+wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
